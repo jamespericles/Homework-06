@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Fix carousel -->
+    <div class="row">
+      <div class="col-md-">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-interval="1000">
@@ -32,6 +35,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+  </div>
+</div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
@@ -42,8 +47,8 @@
               </label>
             </div>
 
-            <input type="city" class="form-control" id="citySearch" />
-            <button type="submit" class="btn btn-primary">
+            <input type="text" class="form-control" id="citySearch" />
+            <button type="button" class="btn btn-primary" onclick="buildQueryURL()">
               Search
             </button>
           </form>
