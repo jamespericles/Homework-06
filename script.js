@@ -4,15 +4,14 @@
 //   console.log(response);
 // });
 function buildQueryURL() {
-  // queryURL is the url we'll use to query the API
-  cityName = "raleigh";
-  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
-
+  // Grab text the user typed into the search input, add to the queryParams object
+  let cityName = $("#citySearch").val().trim();
   // Set the API key
   const apiKey = "641dbb22501d69d8876eafce5adced5c";
 
-  // Grab text the user typed into the search input, add to the queryParams object
-  let cityName = $("#citySearch").val().trim();
+  // queryURL is the url we'll use to query the API
+
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
 
   // Logging the URL so we have access to it for troubleshooting
   console.log("---------------\nURL: " + apiURL + "\n---------------");
