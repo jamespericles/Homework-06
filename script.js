@@ -20,12 +20,25 @@ function buildQueryURL() {
 }
 // Begin function to update page based on retrieval of JSON object
 function updatePage() {
+  let searchHistory = $("#searchHistory").val();
 
+  for (let i = 0; i < searchHistory; i++) {
+    let history = INSERTAPIDATA.response.docs[i];
 
-  let searchHistory = $("#searchHistory").val()
+    let historyCount = i + 1;
 
-for (let i = 0; i < searchHistory; i++) {
-  let history = 
+    let $historyTable = $("<tr>");
+    $historyTable.addClass("table table-sm table-hover table-striped");
+
+    $historyListItem = $("<tr>");
+
+    $historyListItem.append(
+      "<span class='label label-primary'>" +
+        historyCount +
+        "</span>" +
+        "<strong> " +
+        cityName +
+        "</strong>"
+    );
+  }
 }
-} 
-
