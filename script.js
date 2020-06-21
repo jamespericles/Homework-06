@@ -5,6 +5,7 @@
 // });
 function buildQueryURL() {
   // queryURL is the url we'll use to query the API
+  cityName = "raleigh";
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
 
   // Set the API key
@@ -17,6 +18,10 @@ function buildQueryURL() {
   console.log("---------------\nURL: " + apiURL + "\n---------------");
   console.log(apiURL + $.param(cityName));
   return queryURL + $.param(cityName);
+
+  $.get(apiURL, function (response) {
+    console.log(response);
+  });
 }
 // Begin function to update page based on retrieval of JSON object
 function updatePage() {
