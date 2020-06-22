@@ -28,10 +28,14 @@ function buildQueryURL() {
     let currentCity = response.name;
     nameOfCity.text(currentCity);
 
+    // Append the temperature of the city to the document
     let tempOfCity = $("#temperatureTD");
     let currentTemp = ((response.main.temp - 273.15) * 9) / 5 + 32;
     tempOfCity.text("Temperature: " + currentTemp.toPrecision(4));
 
+    let feelOfCity = $("#feelsLikeTD");
+    let currentFeel = ((response.main.feels_like - 273.15) * 9) / 5 + 32;
+    feelOfCity.text("Feels Like: " + currentFeel.toPrecision(4));
     function updatePage() {
       let searchHistory = $("#searchHistory").val();
 
