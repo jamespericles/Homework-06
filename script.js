@@ -6,17 +6,17 @@ function buildQueryURL() {
 
   // queryURL is the url we'll use to query the API
 
-  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
+  const apiURLdaily = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
 
   // Logging the URL so we have access to it for troubleshooting
 
-  $.get(apiURL, function (response) {
-    console.log(response);
-    console.log(response.name);
-    console.log(response.main.temp);
-    console.log(response.main.feels_like);
-    console.log(response.main.humidity);
-    console.log(response.wind.speed);
+  $.get(apiURLdaily, function (response) {
+    // console.log(response);
+    // console.log(response.name);
+    // console.log(response.main.temp);
+    // console.log(response.main.feels_like);
+    // console.log(response.main.humidity);
+    // console.log(response.wind.speed);
 
     // Append the city name to the document
     let nameOfCity = $("#nameOfCity");
@@ -41,6 +41,49 @@ function buildQueryURL() {
     // Append the wind speed to the document
     let speedOfCity = $("#windSpeedTD");
     let currentSpeed = response.wind.speed;
-    speedOfCity.text("Wind Speed: " + currentSpeed + " mph");
+    speedOfCity.text("Wind Speed: " + currentSpeed + " m/s");
+
+    // Append Information for first day
+    let day1 = $("#day1");
+    let day1date = $("#day1date");
+    let icon1 = $("#icon1");
+    let temp1 = $("#temp1");
+    let humidity1 = $("#humidity1");
+
+    day1date.text(response.dt_txt);
+  });
+
+  // apiURL for five day forecast
+  const apiURLfiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=${apiKey}`;
+
+  // Retrieve JSON for five day forecast
+  $.get(apiURLfiveDay, function (response) {
+    console.log(response.list[0].dt_txt);
+
+    // Declare all necessary variables related to the next four days
+
+    let day2 = $("#day2");
+    let day2date = $("#day2date");
+    let icon2 = $("#icon2");
+    let temp2 = $("#temp2");
+    let humidity2 = $("#humidity2");
+
+    let day3 = $("#day3");
+    let day3date = $("#day3date");
+    let icon3 = $("#icon3");
+    let temp3 = $("#temp3");
+    let humidity3 = $("#humidity3");
+
+    let day4 = $("#day4");
+    let day4date = $("#day4date");
+    let icon4 = $("#icon4");
+    let temp4 = $("#temp4");
+    let humidity4 = $("#humidity4");
+
+    let day5 = $("#day5");
+    let day5date = $("#day5date");
+    let icon5 = $("#icon5");
+    let temp5 = $("#temp5");
+    let humidity5 = $("#humidity5");
   });
 }
