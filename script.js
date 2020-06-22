@@ -33,9 +33,16 @@ function buildQueryURL() {
     let currentTemp = ((response.main.temp - 273.15) * 9) / 5 + 32;
     tempOfCity.text("Temperature: " + currentTemp.toPrecision(4));
 
+    // Append the "feels_like" of the city to the document
     let feelOfCity = $("#feelsLikeTD");
     let currentFeel = ((response.main.feels_like - 273.15) * 9) / 5 + 32;
     feelOfCity.text("Feels Like: " + currentFeel.toPrecision(4));
+
+    // Append the humidity of the city to the document
+    let humidityOfCity = $("#humidityTD");
+    let currentHumidity = response.main.humidity;
+    humidityOfCity.text("Humidity: " + currentHumidity + "%");
+
     function updatePage() {
       let searchHistory = $("#searchHistory").val();
 
