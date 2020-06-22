@@ -1,8 +1,3 @@
-// define cityName to get value of text input
-
-// $.get(apiURL, function (response) {
-//   console.log(response);
-// });
 function buildQueryURL() {
   // Grab text the user typed into the search input, add to the queryParams object
   let cityName = $("#citySearch").val().trim();
@@ -47,30 +42,5 @@ function buildQueryURL() {
     let speedOfCity = $("#windSpeedTD");
     let currentSpeed = response.wind.speed;
     speedOfCity.text("Wind Speed: " + currentSpeed + " mph");
-
-    function updatePage() {
-      let searchHistory = $("#searchHistory").val();
-
-      for (let i = 0; i < searchHistory; i++) {
-        let history = INSERTAPIDATA.response.docs[i];
-
-        let historyCount = i + 1;
-
-        let $historyTable = $("<tr>");
-        $historyTable.addClass("table table-sm table-hover table-striped");
-
-        $historyListItem = $("<tr>");
-
-        $historyListItem.append(
-          "<span class='label label-primary'>" +
-            historyCount +
-            "</span>" +
-            "<strong> " +
-            cityName +
-            "</strong>"
-        );
-      }
-    }
   });
 }
-// Begin function to update page based on retrieval of JSON object
