@@ -118,7 +118,10 @@ function buildQueryURL() {
     temp5.text("Temp: " + fourthTemp.toPrecision(4));
     humidity5.text("Humidity: " + fourthHumidity + "%");
 
-    let searchHistory = $("#searchHistory");
-    $("<tr>").add($("<td>")).appendTo(searchHistory);
+    $("#searchHistory").append(`
+ <tr><td>
+ ${response.city.name}
+ </td></tr>
+ `);
   });
 }
