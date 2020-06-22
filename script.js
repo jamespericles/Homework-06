@@ -43,6 +43,11 @@ function buildQueryURL() {
     let currentHumidity = response.main.humidity;
     humidityOfCity.text("Humidity: " + currentHumidity + "%");
 
+    // Append the wind speed to the document
+    let speedOfCity = $("#windSpeedTD");
+    let currentSpeed = response.wind.speed;
+    speedOfCity.text("Wind Speed: " + currentSpeed + " mph");
+
     function updatePage() {
       let searchHistory = $("#searchHistory").val();
 
