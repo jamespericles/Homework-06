@@ -57,19 +57,26 @@ function buildQueryURL() {
     let icon1 = $("#icon1");
     let temp1 = $("#temp1");
     let humidity1 = $("#humidity1");
-    let tomorrowTemp = ((response.list[0].main.temp - 273.15) * 9) / 5 + 32;
-    let tomorrowHumidity = response.list[0].main.humidity;
+    let zerothTemp = ((response.list[3].main.temp - 273.15) * 9) / 5 + 32;
+    let zerothHumidity = response.list[3].main.humidity;
 
-    day1date.text("06-21");
-    // icon1 = $(response.weather[0].icon);
-    temp1.text("Temp: " + tomorrowTemp.toPrecision(4));
-    humidity1.text("Humidity: " + tomorrowHumidity + "%");
+    day1date.text(response.list[3].dt_txt);
+    icon1 = $(response.list[3].weather.icon);
+    temp1.text("Temp: " + zerothTemp.toPrecision(4));
+    humidity1.text("Humidity: " + zerothHumidity + "%");
 
     let day2 = $("#day2");
     let day2date = $("#day2date");
     let icon2 = $("#icon2");
     let temp2 = $("#temp2");
     let humidity2 = $("#humidity2");
+    let firstTemp = ((response.list[11].main.temp - 273.15) * 9) / 5 + 32;
+    let firstHumidity = response.list[11].main.humidity;
+
+    day2date.text(response.list[11].dt_txt);
+    icon2 = $(response.list[11].weather.icon);
+    temp2.text("Temp: " + firstTemp.toPrecision(4));
+    humidity2.text("Humidity: " + firstHumidity + "%");
 
     let day3 = $("#day3");
     let day3date = $("#day3date");
