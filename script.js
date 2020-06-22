@@ -104,17 +104,17 @@ function buildQueryURL() {
     temp4.text("Temp: " + thirdTemp.toPrecision(4));
     humidity4.text("Humidity: " + thirdHumidity + "%");
 
-    // let day3 = $("#day3");
-    // let day3date = $("#day3date");
-    // let icon3 = $("#icon3");
-    // let temp3 = $("#temp3");
-    // let humidity3 = $("#humidity3");
-    // let secondTemp = ((response.list[19].main.temp - 273.15) * 9) / 5 + 32;
-    // let secondHumidity = response.list[19].main.humidity;
+    let day5 = $("#day5");
+    let day5date = $("#day5date");
+    let icon5 = $("#icon5");
+    let temp5 = $("#temp5");
+    let humidity5 = $("#humidity5");
+    let fourthTemp = ((response.list[35].main.temp - 273.15) * 9) / 5 + 32;
+    let fourthHumidity = response.list[35].main.humidity;
 
-    // day3date.text(response.list[19].dt_txt);
-    // icon3 = $(response.list[19].weather.icon);
-    // temp3.text("Temp: " + secondTemp.toPrecision(4));
-    // humidity3.text("Humidity: " + secondHumidity + "%");
+    day5date.text(response.list[35].dt_txt);
+    icon5 = $(response.list[35].weather.icon);
+    temp5.text("Temp: " + fourthTemp.toPrecision(4));
+    humidity5.text("Humidity: " + fourthHumidity + "%");
   });
 }
