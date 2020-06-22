@@ -11,7 +11,7 @@ function buildQueryURL() {
   // Logging the URL so we have access to it for troubleshooting
 
   $.get(apiURLdaily, function (response) {
-    // console.log(response);
+    console.log(response);
     // console.log(response.name);
     // console.log(response.main.temp);
     // console.log(response.main.feels_like);
@@ -50,7 +50,10 @@ function buildQueryURL() {
     let temp1 = $("#temp1");
     let humidity1 = $("#humidity1");
 
-    day1date.text(response.dt_txt);
+    day1date.text("06-21");
+    icon1 = $(response.weather[0].icon);
+    temp1.text("Temp: " + currentTemp.toPrecision(4));
+    humidity1.text("Humidity: " + currentHumidity + "%");
   });
 
   // apiURL for five day forecast
