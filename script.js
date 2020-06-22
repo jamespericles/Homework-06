@@ -14,34 +14,40 @@ function buildQueryURL() {
   const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
 
   // Logging the URL so we have access to it for troubleshooting
-  console.log("---------------\nURL: " + apiURL + "\n---------------");
-  console.log(apiURL + $.param(cityName));
 
   $.get(apiURL, function (response) {
+    console.log(response);
+    console.log(response.name);
     console.log(response.main.temp);
+    console.log(response.main.feels_like);
+    console.log(response.main.humidity);
+    console.log(response.wind.speed);
+
+    let nameOfCity = $("#nameOfCity");
+
+    function updatePage() {
+      let searchHistory = $("#searchHistory").val();
+
+      for (let i = 0; i < searchHistory; i++) {
+        let history = INSERTAPIDATA.response.docs[i];
+
+        let historyCount = i + 1;
+
+        let $historyTable = $("<tr>");
+        $historyTable.addClass("table table-sm table-hover table-striped");
+
+        $historyListItem = $("<tr>");
+
+        $historyListItem.append(
+          "<span class='label label-primary'>" +
+            historyCount +
+            "</span>" +
+            "<strong> " +
+            cityName +
+            "</strong>"
+        );
+      }
+    }
   });
 }
 // Begin function to update page based on retrieval of JSON object
-function updatePage() {
-  let searchHistory = $("#searchHistory").val();
-
-  for (let i = 0; i < searchHistory; i++) {
-    let history = INSERTAPIDATA.response.docs[i];
-
-    let historyCount = i + 1;
-
-    let $historyTable = $("<tr>");
-    $historyTable.addClass("table table-sm table-hover table-striped");
-
-    $historyListItem = $("<tr>");
-
-    $historyListItem.append(
-      "<span class='label label-primary'>" +
-        historyCount +
-        "</span>" +
-        "<strong> " +
-        cityName +
-        "</strong>"
-    );
-  }
-}
