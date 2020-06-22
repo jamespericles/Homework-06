@@ -11,7 +11,7 @@ function buildQueryURL() {
   // Logging the URL so we have access to it for troubleshooting
 
   $.get(apiURLdaily, function (response) {
-    console.log(response);
+    // console.log(response);
     // console.log(response.name);
     // console.log(response.main.temp);
     // console.log(response.main.feels_like);
@@ -42,18 +42,6 @@ function buildQueryURL() {
     let speedOfCity = $("#windSpeedTD");
     let currentSpeed = response.wind.speed;
     speedOfCity.text("Wind Speed: " + currentSpeed + " m/s");
-
-    // Append Information for first day
-    let day1 = $("#day1");
-    let day1date = $("#day1date");
-    let icon1 = $("#icon1");
-    let temp1 = $("#temp1");
-    let humidity1 = $("#humidity1");
-
-    day1date.text("06-21");
-    icon1 = $(response.weather[0].icon);
-    temp1.text("Temp: " + currentTemp.toPrecision(4));
-    humidity1.text("Humidity: " + currentHumidity + "%");
   });
 
   // apiURL for five day forecast
@@ -61,9 +49,21 @@ function buildQueryURL() {
 
   // Retrieve JSON for five day forecast
   $.get(apiURLfiveDay, function (response) {
-    console.log(response.list[0].dt_txt);
+    console.log(response);
 
-    // Declare all necessary variables related to the next four days
+    // Append Information for first day
+    let day1 = $("#day1");
+    let day1date = $("#day1date");
+    let icon1 = $("#icon1");
+    let temp1 = $("#temp1");
+    let humidity1 = $("#humidity1");
+    let tomorrowTemp = ((response.list[0].main.temp - 273.15) * 9) / 5 + 32;
+    let tomorrowHumidity = response.list[0].main.humidity;
+
+    day1date.text("06-21");
+    // icon1 = $(response.weather[0].icon);
+    temp1.text("Temp: " + tomorrowTemp.toPrecision(4));
+    humidity1.text("Humidity: " + tomorrowHumidity + "%");
 
     let day2 = $("#day2");
     let day2date = $("#day2date");
