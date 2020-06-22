@@ -26,12 +26,12 @@ function buildQueryURL() {
     // Append the temperature of the city to the document
     let tempOfCity = $("#temperatureTD");
     let currentTemp = ((response.main.temp - 273.15) * 9) / 5 + 32;
-    tempOfCity.text("Temperature: " + currentTemp.toPrecision(4));
+    tempOfCity.text("Temperature: " + currentTemp.toPrecision(4) + " °F");
 
     // Append the "feels_like" of the city to the document
     let feelOfCity = $("#feelsLikeTD");
     let currentFeel = ((response.main.feels_like - 273.15) * 9) / 5 + 32;
-    feelOfCity.text("Feels Like: " + currentFeel.toPrecision(4));
+    feelOfCity.text("Feels Like: " + currentFeel.toPrecision(4) + " °F");
 
     // Append the humidity of the city to the document
     let humidityOfCity = $("#humidityTD");
@@ -62,7 +62,7 @@ function buildQueryURL() {
 
     day1date.text(response.list[3].dt_txt);
     icon1 = $(response.list[3].weather.icon);
-    temp1.text("Temp: " + zerothTemp.toPrecision(4));
+    temp1.text("Temp: " + zerothTemp.toPrecision(4) + " °F");
     humidity1.text("Humidity: " + zerothHumidity + "%");
 
     // Append data for the other four days
@@ -76,7 +76,7 @@ function buildQueryURL() {
 
     day2date.text(response.list[11].dt_txt);
     icon2 = $(response.list[11].weather.icon);
-    temp2.text("Temp: " + firstTemp.toPrecision(4));
+    temp2.text("Temp: " + firstTemp.toPrecision(4) + " °F");
     humidity2.text("Humidity: " + firstHumidity + "%");
 
     let day3 = $("#day3");
@@ -89,7 +89,7 @@ function buildQueryURL() {
 
     day3date.text(response.list[19].dt_txt);
     icon3 = $(response.list[19].weather.icon);
-    temp3.text("Temp: " + secondTemp.toPrecision(4));
+    temp3.text("Temp: " + secondTemp.toPrecision(4) + " °F");
     humidity3.text("Humidity: " + secondHumidity + "%");
 
     let day4 = $("#day4");
@@ -102,7 +102,7 @@ function buildQueryURL() {
 
     day4date.text(response.list[27].dt_txt);
     icon4 = $(response.list[27].weather.icon);
-    temp4.text("Temp: " + thirdTemp.toPrecision(4));
+    temp4.text("Temp: " + thirdTemp.toPrecision(4) + " °F");
     humidity4.text("Humidity: " + thirdHumidity + "%");
 
     let day5 = $("#day5");
@@ -115,13 +115,15 @@ function buildQueryURL() {
 
     day5date.text(response.list[35].dt_txt);
     icon5 = $(response.list[35].weather.icon);
-    temp5.text("Temp: " + fourthTemp.toPrecision(4));
+    temp5.text("Temp: " + fourthTemp.toPrecision(4) + " °F");
     humidity5.text("Humidity: " + fourthHumidity + "%");
 
-    $("#searchHistory").append(`
+    $("#searchHistory").append(
+      `
  <tr><td>
  ${response.city.name}
  </td></tr>
- `);
+ `
+    );
   });
 }
