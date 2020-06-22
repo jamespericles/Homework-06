@@ -23,9 +23,14 @@ function buildQueryURL() {
     console.log(response.main.humidity);
     console.log(response.wind.speed);
 
+    // Append the city name to the document
     let nameOfCity = $("#nameOfCity");
     let currentCity = response.name;
     nameOfCity.text(currentCity);
+
+    let tempOfCity = $("#temperatureTD");
+    let currentTemp = ((response.main.temp - 273.15) * 9) / 5 + 32;
+    tempOfCity.text("Temperature: " + currentTemp.toPrecision(4));
 
     function updatePage() {
       let searchHistory = $("#searchHistory").val();
