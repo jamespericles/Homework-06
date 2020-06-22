@@ -7,7 +7,7 @@ function buildQueryURL() {
   // Grab text the user typed into the search input, add to the queryParams object
   let cityName = $("#citySearch").val().trim();
   // Set the API key
-  const apiKey = "641dbb22501d69d8876eafce5adced5c";
+  const apiKey = "be562c81eeeb6bd00238f7dcfef3a8b0";
 
   // queryURL is the url we'll use to query the API
 
@@ -16,10 +16,9 @@ function buildQueryURL() {
   // Logging the URL so we have access to it for troubleshooting
   console.log("---------------\nURL: " + apiURL + "\n---------------");
   console.log(apiURL + $.param(cityName));
-  return queryURL + $.param(cityName);
 
   $.get(apiURL, function (response) {
-    console.log(response);
+    console.log(response.main.temp);
   });
 }
 // Begin function to update page based on retrieval of JSON object
