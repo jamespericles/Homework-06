@@ -24,6 +24,8 @@ function buildQueryURL() {
     console.log(response.wind.speed);
 
     let nameOfCity = $("#nameOfCity");
+    let currentCity = response.name;
+    nameOfCity.text(currentCity);
 
     function updatePage() {
       let searchHistory = $("#searchHistory").val();
