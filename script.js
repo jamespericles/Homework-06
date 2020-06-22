@@ -83,6 +83,13 @@ function buildQueryURL() {
     let icon3 = $("#icon3");
     let temp3 = $("#temp3");
     let humidity3 = $("#humidity3");
+    let secondTemp = ((response.list[19].main.temp - 273.15) * 9) / 5 + 32;
+    let secondHumidity = response.list[19].main.humidity;
+
+    day3date.text(response.list[19].dt_txt);
+    icon3 = $(response.list[19].weather.icon);
+    temp3.text("Temp: " + secondTemp.toPrecision(4));
+    humidity3.text("Humidity: " + secondHumidity + "%");
 
     let day4 = $("#day4");
     let day4date = $("#day4date");
