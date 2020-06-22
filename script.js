@@ -65,6 +65,7 @@ function buildQueryURL() {
     temp1.text("Temp: " + zerothTemp.toPrecision(4));
     humidity1.text("Humidity: " + zerothHumidity + "%");
 
+    // Append data for the other four days
     let day2 = $("#day2");
     let day2date = $("#day2date");
     let icon2 = $("#icon2");
@@ -116,5 +117,8 @@ function buildQueryURL() {
     icon5 = $(response.list[35].weather.icon);
     temp5.text("Temp: " + fourthTemp.toPrecision(4));
     humidity5.text("Humidity: " + fourthHumidity + "%");
+
+    let searchHistory = $("#searchHistory");
+    $("<tr>").add($("<td>")).appendTo(searchHistory);
   });
 }

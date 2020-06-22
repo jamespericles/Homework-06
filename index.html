@@ -48,7 +48,7 @@
             </div>
 
             <input type="text" class="form-control" id="citySearch" />
-            <button type="button" class="btn btn-primary" onclick="buildQueryURL()">
+            <button type="button" class="btn btn-primary" id ="searchBtn" onclick="buildQueryURL()">
               Search
             </button>
           </form>
@@ -61,14 +61,12 @@
               </tr>
             </thead>
             <!-- Remove these and have jquery append them live -->
-            <tbody>
+            <tbody  id="searchHistory">
               <!-- correct place for id and to append? -->
-              <tr id="searchHistory">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+           
+              
+          
+              
             </tbody>
           </table>
         </div>
