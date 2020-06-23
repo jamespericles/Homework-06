@@ -18,6 +18,14 @@ Secondary Goals
 - Typing in search bar tries to autofill
 - Color code whether conditions as favorable, moderate, and severe
 
+Tutor Goals
+
+- Fix carousel
+- Make appended table cells clickable to recall that data
+- Find solution for weather symbols
+- Help with styling
+- FIX THE TIME ISSUE
+
 Plan
 
 HTML First
