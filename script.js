@@ -43,11 +43,15 @@ function buildQueryURL() {
     let currentSpeed = response.wind.speed;
     speedOfCity.text("Wind Speed: " + currentSpeed + " m/s");
 
+    // Retrieve lat and lon values from original api call, which is needed
+    // to find the UV index of the current city with the api call below
     const lat = response.coord.lat;
     const lon = response.coord.lon;
 
+    // API url for UV index data
     const apiURLuv = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
 
+    // Call the above url and append the data to the document
     $.get(apiURLuv, function (response) {
       console.log(response);
       let UVofCity = $("#uvIndexTD");
