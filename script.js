@@ -44,16 +44,15 @@ function buildQueryURL() {
     speedOfCity.text("Wind Speed: " + currentSpeed + " m/s");
 
     const lat = response.coord.lat;
-    console.log(response.coord.lat);
-
     const lon = response.coord.lon;
-    console.log(response.coord.lon);
 
     const apiURLuv = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
 
     $.get(apiURLuv, function (response) {
-      let UVofCity = $("#uvIndexTD");
       console.log(response);
+      let UVofCity = $("#uvIndexTD");
+      let currentUV = response.value;
+      UVofCity.text("UV Index: " + currentUV);
     });
   });
 
