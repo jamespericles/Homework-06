@@ -42,6 +42,19 @@ function buildQueryURL() {
     let speedOfCity = $("#windSpeedTD");
     let currentSpeed = response.wind.speed;
     speedOfCity.text("Wind Speed: " + currentSpeed + " m/s");
+
+    const lat = response.coord.lat;
+    console.log(response.coord.lat);
+
+    const lon = response.coord.lon;
+    console.log(response.coord.lon);
+
+    const apiURLuv = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+
+    $.get(apiURLuv, function (response) {
+      let UVofCity = $("#uvIndexTD");
+      console.log(response);
+    });
   });
 
   // apiURL for five day forecast
@@ -49,7 +62,7 @@ function buildQueryURL() {
 
   // Retrieve JSON for five day forecast
   $.get(apiURLfiveDay, function (response) {
-    console.log(response);
+    // console.log(response);
 
     // Append Information for first day
     let day1 = $("#day1");
