@@ -69,7 +69,10 @@ function buildQueryURL() {
 
   // Retrieve JSON for five day forecast
   $.get(apiURLfiveDay, function (response) {
-    // console.log(response);
+    console.log(response);
+    if (response.status === 404) {
+      alert("Unable to find city, please try again!");
+    }
 
     // Append Information for first day
     let day1 = $("#day1");
