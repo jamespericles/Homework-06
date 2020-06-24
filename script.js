@@ -15,7 +15,7 @@ function buildQueryURL() {
   // Logging the URL so we have access to it for troubleshooting
 
   $.get(apiURLdaily, function (response) {
-    // console.log(response);
+    console.log(response);
     // console.log(response.name);
     // console.log(response.main.temp);
     // console.log(response.main.feels_like);
@@ -26,6 +26,13 @@ function buildQueryURL() {
     let nameOfCity = $("#nameOfCity");
     let currentCity = response.name;
     nameOfCity.text(currentCity);
+
+    let icon0 = $("#icon0");
+    icon0 =
+      "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
+    let newIcon0 = `<img class="weatherIcon" src=${icon0}></img>`;
+    $("#icon0").html(newIcon0);
+    console.log(icon0);
 
     // Append the temperature of the city to the document
     let tempOfCity = $("#temperatureTD");
@@ -92,8 +99,8 @@ function buildQueryURL() {
     $("#icon1").html(newIcon1);
     temp1.text("Temp: " + zerothTemp.toPrecision(4) + " °F");
     humidity1.text("Humidity: " + zerothHumidity + "%");
-    console.log(icon1);
-    console.log(response);
+    // console.log(icon1);
+    // console.log(response);
 
     // Append data for the other four days
     let day2 = $("#day2");
