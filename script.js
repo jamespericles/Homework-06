@@ -75,8 +75,11 @@ function buildQueryURL() {
     let humidity1 = $("#humidity1");
     let zerothTemp = ((response.list[3].main.temp - 273.15) * 9) / 5 + 32;
     let zerothHumidity = response.list[3].main.humidity;
-
-    day1date.text(response.list[3].dt_txt);
+    let slicedTime = response.list[3].dt_txt.substring(
+      0,
+      response.list[3].dt_txt.length - 9
+    );
+    day1date.text(slicedTime);
     icon1 =
       "http://openweathermap.org/img/wn/" +
       response.list[3].weather[0].icon +
