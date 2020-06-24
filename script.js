@@ -114,7 +114,7 @@ function buildQueryURL() {
       ".png";
     let newIcon2 = `<img class="weatherIcon" src=${icon2}></img>`;
     $("#icon2").html(newIcon2);
-    day2date.text(response.list[11].dt_txt);
+    day2date.text(slicedTime1);
     icon2 = $(response.list[11].weather.icon);
     temp2.text("Temp: " + firstTemp.toPrecision(4) + " °F");
     humidity2.text("Humidity: " + firstHumidity + "%");
@@ -138,7 +138,7 @@ function buildQueryURL() {
       ".png";
     let newIcon3 = `<img class="weatherIcon" src=${icon3}></img>`;
     $("#icon3").html(newIcon3);
-    day3date.text(response.list[19].dt_txt);
+    day3date.text(slicedTime2);
     icon3 = $(response.list[19].weather.icon);
     temp3.text("Temp: " + secondTemp.toPrecision(4) + " °F");
     humidity3.text("Humidity: " + secondHumidity + "%");
@@ -161,7 +161,7 @@ function buildQueryURL() {
       ".png";
     let newIcon4 = `<img class="weatherIcon" src=${icon4}></img>`;
     $("#icon4").html(newIcon3);
-    day4date.text(response.list[27].dt_txt);
+    day4date.text(slicedTime3);
     icon4 = $(response.list[27].weather.icon);
     temp4.text("Temp: " + thirdTemp.toPrecision(4) + " °F");
     humidity4.text("Humidity: " + thirdHumidity + "%");
@@ -184,7 +184,7 @@ function buildQueryURL() {
       ".png";
     let newIcon5 = `<img class="weatherIcon" src=${icon5}></img>`;
     $("#icon5").html(newIcon5);
-    day5date.text(response.list[35].dt_txt);
+    day5date.text(slicedTime4);
     icon5 = $(response.list[35].weather.icon);
     temp5.text("Temp: " + fourthTemp.toPrecision(4) + " °F");
     humidity5.text("Humidity: " + fourthHumidity + "%");
