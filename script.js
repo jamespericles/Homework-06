@@ -79,10 +79,12 @@ function buildQueryURL() {
     let humidity1 = $("#humidity1");
     let zerothTemp = ((response.list[3].main.temp - 273.15) * 9) / 5 + 32;
     let zerothHumidity = response.list[3].main.humidity;
+    // Retrieve the time from the JSON object but remove the last 9 characters which are not relevant to us
     let slicedTime0 = response.list[3].dt_txt.substring(
       0,
       response.list[3].dt_txt.length - 9
     );
+    // Set the date to equal the newly sliced time
     day1date.text(slicedTime0);
     icon1 =
       "http://openweathermap.org/img/wn/" +
@@ -128,6 +130,7 @@ function buildQueryURL() {
       0,
       response.list[19].dt_txt.length - 9
     );
+
     day3date.text(slicedTime2);
     icon3 =
       "http://openweathermap.org/img/wn/" +
