@@ -79,11 +79,11 @@ function buildQueryURL() {
     let humidity1 = $("#humidity1");
     let zerothTemp = ((response.list[3].main.temp - 273.15) * 9) / 5 + 32;
     let zerothHumidity = response.list[3].main.humidity;
-    let slicedTime = response.list[3].dt_txt.substring(
+    let slicedTime0 = response.list[3].dt_txt.substring(
       0,
       response.list[3].dt_txt.length - 9
     );
-    day1date.text(slicedTime);
+    day1date.text(slicedTime0);
     icon1 =
       "http://openweathermap.org/img/wn/" +
       response.list[3].weather[0].icon +
@@ -104,7 +104,17 @@ function buildQueryURL() {
     let humidity2 = $("#humidity2");
     let firstTemp = ((response.list[11].main.temp - 273.15) * 9) / 5 + 32;
     let firstHumidity = response.list[11].main.humidity;
-
+    let slicedTime1 = response.list[11].dt_txt.substring(
+      0,
+      response.list[11].dt_txt.length - 9
+    );
+    day2date.text(slicedTime1);
+    icon2 =
+      "http://openweathermap.org/img/wn/" +
+      response.list[11].weather[0].icon +
+      ".png";
+    let newIcon2 = `<img class="weatherIcon" src=${icon2}></img>`;
+    $("#icon2").html(newIcon2);
     day2date.text(response.list[11].dt_txt);
     icon2 = $(response.list[11].weather.icon);
     temp2.text("Temp: " + firstTemp.toPrecision(4) + " °F");
@@ -117,7 +127,17 @@ function buildQueryURL() {
     let humidity3 = $("#humidity3");
     let secondTemp = ((response.list[19].main.temp - 273.15) * 9) / 5 + 32;
     let secondHumidity = response.list[19].main.humidity;
-
+    let slicedTime2 = response.list[19].dt_txt.substring(
+      0,
+      response.list[19].dt_txt.length - 9
+    );
+    day3date.text(slicedTime2);
+    icon3 =
+      "http://openweathermap.org/img/wn/" +
+      response.list[19].weather[0].icon +
+      ".png";
+    let newIcon3 = `<img class="weatherIcon" src=${icon3}></img>`;
+    $("#icon3").html(newIcon3);
     day3date.text(response.list[19].dt_txt);
     icon3 = $(response.list[19].weather.icon);
     temp3.text("Temp: " + secondTemp.toPrecision(4) + " °F");
@@ -130,7 +150,17 @@ function buildQueryURL() {
     let humidity4 = $("#humidity4");
     let thirdTemp = ((response.list[27].main.temp - 273.15) * 9) / 5 + 32;
     let thirdHumidity = response.list[27].main.humidity;
-
+    let slicedTime3 = response.list[27].dt_txt.substring(
+      0,
+      response.list[27].dt_txt.length - 9
+    );
+    day4date.text(slicedTime3);
+    icon4 =
+      "http://openweathermap.org/img/wn/" +
+      response.list[27].weather[0].icon +
+      ".png";
+    let newIcon4 = `<img class="weatherIcon" src=${icon4}></img>`;
+    $("#icon4").html(newIcon3);
     day4date.text(response.list[27].dt_txt);
     icon4 = $(response.list[27].weather.icon);
     temp4.text("Temp: " + thirdTemp.toPrecision(4) + " °F");
@@ -143,7 +173,17 @@ function buildQueryURL() {
     let humidity5 = $("#humidity5");
     let fourthTemp = ((response.list[35].main.temp - 273.15) * 9) / 5 + 32;
     let fourthHumidity = response.list[35].main.humidity;
-
+    let slicedTime4 = response.list[35].dt_txt.substring(
+      0,
+      response.list[35].dt_txt.length - 9
+    );
+    day5date.text(slicedTime4);
+    icon5 =
+      "http://openweathermap.org/img/wn/" +
+      response.list[35].weather[0].icon +
+      ".png";
+    let newIcon5 = `<img class="weatherIcon" src=${icon5}></img>`;
+    $("#icon5").html(newIcon5);
     day5date.text(response.list[35].dt_txt);
     icon5 = $(response.list[35].weather.icon);
     temp5.text("Temp: " + fourthTemp.toPrecision(4) + " °F");
