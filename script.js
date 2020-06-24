@@ -53,7 +53,7 @@ function buildQueryURL() {
 
     // Call the above url and append the data to the document
     $.get(apiURLuv, function (response) {
-      console.log(response);
+      // console.log(response);
       let UVofCity = $("#uvIndexTD");
       let currentUV = response.value;
       UVofCity.text("UV Index: " + currentUV);
@@ -77,9 +77,17 @@ function buildQueryURL() {
     let zerothHumidity = response.list[3].main.humidity;
 
     day1date.text(response.list[3].dt_txt);
-    icon1 = $(response.list[3].weather.icon);
+    icon1 =
+      "http://openweathermap.org/img/wn/" +
+      response.list[3].weather[0].icon +
+      ".png";
+    let newIcon1 = `<img class="weatherIcon" src=${icon1}></img>`;
+    $("#icon1").html(newIcon1);
+    // http://openweathermap.org/img/wn/ link for icons
     temp1.text("Temp: " + zerothTemp.toPrecision(4) + " °F");
     humidity1.text("Humidity: " + zerothHumidity + "%");
+    console.log(icon1);
+    console.log(response);
 
     // Append data for the other four days
     let day2 = $("#day2");
