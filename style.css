@@ -13,5 +13,25 @@
 }
 
 .d-block {
-  width: 100rem !important;
+  width: 100vw !important;
+}
+
+.rainStormBackgroundImg {
+  background: url("Assets/rainImage.jpg");
+}
+
+.snowStormBackgroundImg {
+  background: url("Assets/snowStorm.jpg");
+}
+
+.sunnyDayBackgroundImg {
+  background: url("Assets/sunnyDay.jpeg");
+}
+
+.rainStormBackgroundImg,
+.snowStormBackgroundImg,
+.sunnyDayBackgroundImg {
+  background-size: cover;
+  width: 100vw;
+  height: 40rem;
 }

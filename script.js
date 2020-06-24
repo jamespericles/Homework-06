@@ -1,3 +1,7 @@
+$(".carousel").carousel({
+  interval: 5000,
+});
+
 function buildQueryURL() {
   // Grab text the user typed into the search input, add to the queryParams object
   let cityName = $("#citySearch").val().trim();
