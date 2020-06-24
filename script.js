@@ -11,7 +11,15 @@ function buildQueryURL() {
   // queryURL is the url we'll use to query the API
 
   const apiURLdaily = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}`;
+  $.ajax({
+    cache: false,
+    url: apiURLdaily,
 
+    success: function (data) {},
+    error: function (ajaxContext) {
+      alert("Unable to find city, please try again.");
+    },
+  });
   // Logging the URL so we have access to it for troubleshooting
 
   $.get(apiURLdaily, function (response) {
