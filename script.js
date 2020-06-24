@@ -90,7 +90,6 @@ function buildQueryURL() {
       ".png";
     let newIcon1 = `<img class="weatherIcon" src=${icon1}></img>`;
     $("#icon1").html(newIcon1);
-    // http://openweathermap.org/img/wn/ link for icons
     temp1.text("Temp: " + zerothTemp.toPrecision(4) + " °F");
     humidity1.text("Humidity: " + zerothHumidity + "%");
     console.log(icon1);
