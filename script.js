@@ -2,7 +2,9 @@
 $(".carousel").carousel({
   interval: 5000,
 });
+
 let city = localStorage.getItem("Last Search");
+buildQueryURL(city);
 function buildQueryURL(city) {
   // Grab text the user typed into the search input, add to the queryParams object
   let cityName;
