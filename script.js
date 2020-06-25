@@ -6,6 +6,7 @@ $(".carousel").carousel({
 function buildQueryURL() {
   // Grab text the user typed into the search input, add to the queryParams object
   let cityName = $("#citySearch").val().trim();
+  localStorage.setItem("Last Search", cityName);
   // Set the API key
   const apiKey = "be562c81eeeb6bd00238f7dcfef3a8b0";
 
