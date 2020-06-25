@@ -18,7 +18,6 @@ function buildQueryURL() {
   $.ajax({
     cache: false,
     url: apiURLdaily,
-
     success: function (data) {},
     error: function (ajaxContext) {
       alert("Unable to find city, please try again.");
@@ -110,6 +109,7 @@ function buildQueryURL() {
     $("#icon1").html(newIcon1);
     temp1.text("Temp: " + zerothTemp.toPrecision(4) + " °F");
     humidity1.text("Humidity: " + zerothHumidity + "%");
+    day1.addClass("fiveDayAfter");
 
     // Append data for the other four days
     let day2 = $("#day2");
@@ -134,6 +134,7 @@ function buildQueryURL() {
     icon2 = $(response.list[11].weather.icon);
     temp2.text("Temp: " + firstTemp.toPrecision(4) + " °F");
     humidity2.text("Humidity: " + firstHumidity + "%");
+    day2.addClass("fiveDayAfter");
 
     let day3 = $("#day3");
     let day3date = $("#day3date");
@@ -158,6 +159,7 @@ function buildQueryURL() {
     icon3 = $(response.list[19].weather.icon);
     temp3.text("Temp: " + secondTemp.toPrecision(4) + " °F");
     humidity3.text("Humidity: " + secondHumidity + "%");
+    day3.addClass("fiveDayAfter");
 
     let day4 = $("#day4");
     let day4date = $("#day4date");
@@ -181,6 +183,7 @@ function buildQueryURL() {
     icon4 = $(response.list[27].weather.icon);
     temp4.text("Temp: " + thirdTemp.toPrecision(4) + " °F");
     humidity4.text("Humidity: " + thirdHumidity + "%");
+    day4.addClass("fiveDayAfter");
 
     let day5 = $("#day5");
     let day5date = $("#day5date");
@@ -204,6 +207,7 @@ function buildQueryURL() {
     icon5 = $(response.list[35].weather.icon);
     temp5.text("Temp: " + fourthTemp.toPrecision(4) + " °F");
     humidity5.text("Humidity: " + fourthHumidity + "%");
+    day5.addClass("fiveDayAfter");
 
     $("#searchHistory").append(
       `
