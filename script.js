@@ -1,3 +1,4 @@
+// Controls for the carousel, global so that it starts when page is loaded
 $(".carousel").carousel({
   interval: 5000,
 });
