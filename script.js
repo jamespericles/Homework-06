@@ -2,11 +2,16 @@
 $(".carousel").carousel({
   interval: 5000,
 });
-
-function buildQueryURL() {
+let city = localStorage.getItem("Last Search");
+function buildQueryURL(city) {
   // Grab text the user typed into the search input, add to the queryParams object
-  let cityName = $("#citySearch").val().trim();
-  localStorage.setItem("Last Search", cityName);
+  let cityName;
+  if (city) {
+    cityName = city;
+  } else {
+    cityName = $("#citySearch").val().trim();
+    localStorage.setItem("Last Search", cityName);
+  }
   // Set the API key
   const apiKey = "be562c81eeeb6bd00238f7dcfef3a8b0";
 
