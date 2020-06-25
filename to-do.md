@@ -11,7 +11,7 @@ Primary Goals
 <!-- - Don't forget icon -->
 
 - User is able to click on cities in search history and be presented with the same date for searched cities
-- When application is opened, the last searched city is presented
+<!-- - When application is opened, the last searched city is presented -->
 
 Secondary Goals
 
@@ -55,4 +55,4 @@ Notes
 - All info in 5-day section is updated with each search
 - Searching causes the name of the last city searched to be appended to the history -->
 
-- History is saved to local storage so that it persists upon refresh
+<!-- - History is saved to local storage so that it persists upon refresh -->
