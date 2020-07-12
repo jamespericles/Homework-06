@@ -24,9 +24,9 @@ Weather Dashboard is a simple application utilizing several API calls from [open
 
 Besides displaying the appropriate data from those JSON objects, this application also displays images based on the forecast for that city. It also creates a search history within local storage to allow the user to conveniently view cities they had already searched for.
 
-### <a name="Screenshots></a>Screenshots
+### <a name="Screenshots"></a>Screenshots
 
-![Cloudy_Day_Incoming](Week-06/Screenshots/Cloudy_week_incoming.png)
+![Cloudy_Day_Incoming](https://github.com/jamespericles/Weather-Dashboard/blob/master/Screenshots/Cloudy_week_incoming.png)
 
 ### <a name="Technologies-Used"></a>Technologies Used
 
