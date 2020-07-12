@@ -8,13 +8,13 @@ Weather Dashboard is a simple application utilizing several API calls from [open
 
 Besides displaying the appropriate data from those JSON objects, this application also displays images based on the forecast for that city. It also creates a search history within local storage to allow the user to convienently view cities they had already searched for.
 
-### Table of Contents
+# Table of Contents
 
-## (#Description)
+## [Description](#Description)
 
 ---
 
-## Technologies Used(#Technologies Used)
+## [Technologies Used](#Technologies-Used)
 
 ## [Usage]
 
@@ -22,7 +22,7 @@ Besides displaying the appropriate data from those JSON objects, this applicatio
 
 ## [Questions]
 
-### <a name="Technologies Used"></a> Technologies Used
+### <a name="Technologies-Used"></a> Technologies Used
 
 This project utilized HTML, CSS, and Javascript langauges and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it.
 
