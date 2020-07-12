@@ -30,7 +30,7 @@ Besides displaying the appropriate data from those JSON objects, this applicatio
 
 ### <a name="Technologies-Used"></a>Technologies Used
 
-This project utilized HTML, CSS, and Javascript languages and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it.
+This project utilized HTML, CSS, Javascript languages, and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it.
 
 ### <a name="Usage"></a>Usage
 
