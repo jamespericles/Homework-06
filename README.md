@@ -1,18 +1,38 @@
-<<<<<<< HEAD
 # Weather Dashboard
 
 ---
 
 ### Description
 
-Weather Dashboard is a simple application utilizing several API calls from [openweathermap.org](openweathermap.org) to provide the user several forecasts based on the city searched for.
+Weather Dashboard is a simple application utilizing several API calls from [openweathermap.org](openweathermap.org) to provide the user several forecasts based on the city searched for. The three APIs utilized retrieve a forecast for the current weather, a five-day forecast, and the UV index for the city searched for.
+
+Besides displaying the appropriate data from those JSON objects, this application also displays images based on the forecast for that city. It also creates a search history within local storage to allow the user to convienently view cities they had already searched for.
 
 ### Table of Contents
 
 [Description]
-=======
-# Homework-06
-This assignment takes advantage of an several different APIs from https://openweathermap.org/ to retrieve forecasted data for whatever city the user searches for. The three APIs utilized retrieve a forecast for the current weather, a five-day forecast, and the UV index for whatever city the user searches for.
+--- 
+[Technologies Used]
+---
+[Usage]
+---
+[Contributing]
+---
+[Questions]
+---
 
-Besides displaying the appropriate data from those JSON objects, this application also displays images based on the forecast it also creates a history in local storage to allow the user to convienently view cities they had already searched for.
->>>>>>> 313ff7e5e53beb478d53abdbbb7b22d67df38a48
+### Technologies Used
+
+This project utilized HTML, CSS, and Javascript langauges and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it. 
+
+### Usage
+
+Weather Dashboard works in any web browser, and is deployed [here](https://jamespericles.github.io/Weather-Dashboard/)
+
+### Contributing
+
+Please feel free to iterate on my work if you so desire!
+
+### Questions
+
+For any questions related to this project or any of my other work, please contact me at jamesspericles@gmail.com
