@@ -11,19 +11,20 @@ Besides displaying the appropriate data from those JSON objects, this applicatio
 ### Table of Contents
 
 [Description]
---- 
-[Technologies Used]
----
-[Usage]
----
-[Contributing]
----
-[Questions]
+
 ---
 
-### Technologies Used
+## Technologies Used(#Technologies Used)
 
-This project utilized HTML, CSS, and Javascript langauges and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it. 
+## [Usage]
+
+## [Contributing]
+
+## [Questions]
+
+### <a name="Technologies Used"></a> Technologies Used
+
+This project utilized HTML, CSS, and Javascript langauges and ajax call functions to retrieve the appropriate information from the API, while also parsing the JSON object returned to it.
 
 ### Usage
 
