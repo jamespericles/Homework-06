@@ -2,7 +2,7 @@
 
 ---
 
-### Description
+### <a name="Description"></a> Description
 
 Weather Dashboard is a simple application utilizing several API calls from [openweathermap.org](openweathermap.org) to provide the user several forecasts based on the city searched for. The three APIs utilized retrieve a forecast for the current weather, a five-day forecast, and the UV index for the city searched for.
 
@@ -10,7 +10,7 @@ Besides displaying the appropriate data from those JSON objects, this applicatio
 
 ### Table of Contents
 
-[Description]
+## (#Description)
 
 ---
 
